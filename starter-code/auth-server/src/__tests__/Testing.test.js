@@ -65,10 +65,11 @@ describe('Testing Auth', () => {
     });
 
     describe('Testing Login', async () => {
-      it('basic fails with known user and wrong password ', async (done) => {
+
+      it('tesing login', async (done) => {
 
         const response = await mockRequest.post('/signin')
-          .auth('admin', 'xyz')
+          .auth('admin', 'kjh')
         const userObject = response.body;
 
         expect(response.status).toBe(403);
@@ -80,7 +81,7 @@ describe('Testing Auth', () => {
       it('Testing Users ', async (done) => {
 
         const response = await mockRequest.post('/signin')
-          .auth('nobody', 'xyz')
+          .auth('Nothing', 'mko')
         const userObject = response.body;
 
         expect(response.status).toBe(403);
